@@ -1,5 +1,3 @@
-# Vercelデプロイ設定ファイル
-
 {
   "version": 2,
   "buildCommand": "npm run build",
