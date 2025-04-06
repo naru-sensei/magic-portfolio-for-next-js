@@ -1,24 +1,24 @@
 import { InlineCode } from "@/once-ui/components";
 
 const person = {
-  firstName: "Selene",
-  lastName: "Yu",
+  firstName: "如月",
+  lastName: "成美",
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "Design Engineer",
+  role: "数学家庭教師",
   avatar: "/images/avatar.jpg",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  location: "Asia/Tokyo", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  languages: ["日本語", "English"], // optional: Leave the array empty if you don't want to display languages
 };
 
 const newsletter = {
   display: true,
-  title: <>Subscribe to {person.firstName}'s Newsletter</>,
+  title: <>ナル先生のニュースレターを購読する</>,
   description: (
     <>
-      I occasionally write about design, technology, and share thoughts on the intersection of
-      creativity and engineering.
+      数学の魅力や日々の発見、そして時々ドキドキするような秘密のお話をお届けします。
+      ナル先生と一緒に数学の世界を楽しみましょう！
     </>
   ),
 };
@@ -27,14 +27,9 @@ const social = [
   // Links are automatically displayed.
   // Import new icons in /once-ui/icons.ts
   {
-    name: "GitHub",
-    icon: "github",
-    link: "https://github.com/once-ui-system/nextjs-starter",
-  },
-  {
-    name: "LinkedIn",
-    icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
+    name: "Instagram",
+    icon: "instagram",
+    link: "https://www.instagram.com/lovely.naru.sensei/",
   },
   {
     name: "X",
@@ -42,29 +37,34 @@ const social = [
     link: "",
   },
   {
+    name: "Note",
+    icon: "note",
+    link: "",
+  },
+  {
     name: "Email",
     icon: "email",
-    link: "mailto:example@gmail.com",
+    link: "mailto:naru.sensei@example.com",
   },
 ];
 
 const home = {
-  label: "Home",
-  title: `${person.name}'s Portfolio`,
-  description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Design engineer and builder</>,
+  label: "ホーム",
+  title: `ナル先生の公式サイト`,
+  description: `如月成美（ナル先生）の公式ウェブサイト - 数学の魅力をお届けします`,
+  headline: <>数学の魅力を伝える家庭教師</>,
   subline: (
     <>
-      I'm Selene, a design engineer at <InlineCode>FLY</InlineCode>, where I craft intuitive
-      <br /> user experiences. After hours, I build my own projects.
+      こんにちは！<InlineCode>ナル先生</InlineCode>こと如月成美です。
+      <br />東京大学大学院で数学を研究しながら、数学の楽しさを皆さんにお伝えしています。
     </>
   ),
 };
 
 const about = {
-  label: "About",
-  title: "About me",
-  description: `Meet ${person.name}, ${person.role} from ${person.location}`,
+  label: "プロフィール",
+  title: "ナル先生について",
+  description: `如月成美（ナル先生）のプロフィール - 22歳の数学家庭教師`,
   tableOfContent: {
     display: true,
     subItems: false,
@@ -78,55 +78,55 @@ const about = {
   },
   intro: {
     display: true,
-    title: "Introduction",
+    title: "自己紹介",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        「ナル先生」こと如月成美（きさらぎ・なるみ）は、東京大学大学院数理科学研究科の修士1年生です。
+        数論と幾何学を専門とし、自宅で1対1の数学家庭教師をしています。
+        真面目で熱血、でもちょっと天然な性格で、数学の話になると興奮してしまう癖があります。
+        口癖は「あっ…やばい…楽しくなってきちゃった…❤️」。
+        数学の魅力を多くの人に伝えることが目標です！
       </>
     ),
   },
   work: {
     display: true, // set to false to hide this section
-    title: "Work Experience",
+    title: "活動内容",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "数学講座シリーズ",
+        timeframe: "2023 - 現在",
+        role: "講師",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            「ナル先生と学ぶ数学講座」シリーズを毎週配信。高校数学から大学レベルまで、
+            わかりやすく楽しい解説で多くの学生から支持を得ています。
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            特に「ナル先生の微分積分入門」は再生回数10万回を突破し、
+            「難しい数学が楽しく学べる」と評判です。
           </>,
         ],
         images: [
           // optional: leave the array empty if you don't want to display images
           {
             src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
+            alt: "ナル先生の数学講座",
             width: 16,
             height: 9,
           },
         ],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "家庭教師",
+        timeframe: "2022 - 現在",
+        role: "数学家庭教師",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+            個別指導で多くの生徒の成績向上に貢献。指導した生徒の80%以上が志望校に合格。
           </>,
           <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
+            独自の「ナル先生メソッド」で数学が苦手だった生徒も楽しく学べるようになりました。
           </>,
         ],
         images: [],
@@ -135,49 +135,43 @@ const about = {
   },
   studies: {
     display: true, // set to false to hide this section
-    title: "Studies",
+    title: "学歴",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "東京大学大学院 数理科学研究科",
+        description: <>修士1年生として数論と幾何学を研究中。</>,
       },
       {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "東京大学 理学部数学科",
+        description: <>首席で卒業。卒業論文は「楕円曲線の有理点と数論幾何学的アプローチ」。</>,
       },
     ],
   },
   technical: {
     display: true, // set to false to hide this section
-    title: "Technical skills",
+    title: "特技・専門分野",
     skills: [
       {
-        title: "Figma",
-        description: <>Able to prototype in Figma with Once UI with unnatural speed.</>,
+        title: "数論",
+        description: <>整数論から代数的数論まで幅広く研究。特に楕円曲線論が得意分野です。</>,
         // optional: leave the array empty if you don't want to display images
         images: [
           {
             src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
+            alt: "数論の研究",
             width: 16,
             height: 9,
           },
         ],
       },
       {
-        title: "Next.js",
-        description: <>Building next gen apps with Next.js + Once UI + Supabase.</>,
+        title: "幾何学",
+        description: <>微分幾何学と代数幾何学を専門に研究。複素多様体論にも興味があります。</>,
         // optional: leave the array empty if you don't want to display images
         images: [
           {
             src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
+            alt: "幾何学の研究",
             width: 16,
             height: 9,
           },
@@ -188,95 +182,95 @@ const about = {
 };
 
 const blog = {
-  label: "Blog",
-  title: "Writing about design and tech...",
-  description: `Read what ${person.name} has been up to recently`,
+  label: "ブログ",
+  title: "ナル先生の数学ブログ",
+  description: `数学の魅力や日常の発見をお届けします`,
   // Create new blog posts by adding a new .mdx file to app/blog/posts
   // All posts will be listed on the /blog route
 };
 
 const work = {
-  label: "Work",
-  title: "My projects",
-  description: `Design and dev projects by ${person.name}`,
+  label: "講座",
+  title: "ナル先生の数学講座",
+  description: `わかりやすく楽しい数学講座シリーズ`,
   // Create new project pages by adding a new .mdx file to app/blog/posts
   // All projects will be listed on the /home and /work routes
 };
 
 const gallery = {
-  label: "Gallery",
-  title: "My photo gallery",
-  description: `A photo collection by ${person.name}`,
+  label: "ギャラリー",
+  title: "ナル先生カード集",
+  description: `ナル先生のレアカードコレクション`,
   // Images from https://pexels.com
   images: [
     {
       src: "/images/gallery/img-01.jpg",
-      alt: "image",
+      alt: "ナル先生カード",
       orientation: "vertical",
     },
     {
       src: "/images/gallery/img-02.jpg",
-      alt: "image",
+      alt: "ナル先生カード",
       orientation: "horizontal",
     },
     {
       src: "/images/gallery/img-03.jpg",
-      alt: "image",
+      alt: "ナル先生カード",
       orientation: "vertical",
     },
     {
       src: "/images/gallery/img-04.jpg",
-      alt: "image",
+      alt: "ナル先生カード",
       orientation: "horizontal",
     },
     {
       src: "/images/gallery/img-05.jpg",
-      alt: "image",
+      alt: "ナル先生カード",
       orientation: "horizontal",
     },
     {
       src: "/images/gallery/img-06.jpg",
-      alt: "image",
+      alt: "ナル先生カード",
       orientation: "vertical",
     },
     {
       src: "/images/gallery/img-07.jpg",
-      alt: "image",
+      alt: "ナル先生カード",
       orientation: "horizontal",
     },
     {
       src: "/images/gallery/img-08.jpg",
-      alt: "image",
+      alt: "ナル先生カード",
       orientation: "vertical",
     },
     {
       src: "/images/gallery/img-09.jpg",
-      alt: "image",
+      alt: "ナル先生カード",
       orientation: "horizontal",
     },
     {
       src: "/images/gallery/img-10.jpg",
-      alt: "image",
+      alt: "ナル先生カード",
       orientation: "horizontal",
     },
     {
       src: "/images/gallery/img-11.jpg",
-      alt: "image",
+      alt: "ナル先生カード",
       orientation: "vertical",
     },
     {
       src: "/images/gallery/img-12.jpg",
-      alt: "image",
+      alt: "ナル先生カード",
       orientation: "horizontal",
     },
     {
       src: "/images/gallery/img-13.jpg",
-      alt: "image",
+      alt: "ナル先生カード",
       orientation: "horizontal",
     },
     {
       src: "/images/gallery/img-14.jpg",
-      alt: "image",
+      alt: "ナル先生カード",
       orientation: "horizontal",
     },
   ],

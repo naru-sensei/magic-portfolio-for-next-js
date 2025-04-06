@@ -1,0 +1,72 @@
+# GitHub Actions CI/CD設定
+
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20'
+        cache: 'npm'
+    
+    - name: Install dependencies
+      run: npm ci
+    
+    - name: Lint
+      run: npm run lint
+    
+    - name: Build
+      run: npm run build
+      env:
+        NEXT_PUBLIC_SITE_URL: https://narusensei.com
+        NEXT_PUBLIC_SITE_NAME: ナル先生の公式サイト
+        NEXT_PUBLIC_SITE_DESCRIPTION: 如月成美（ナル先生）の公式ウェブサイト - 数学の魅力をお届けします
+        NEXT_PUBLIC_TWITTER_HANDLE: "@naru_sensei"
+        NEXT_PUBLIC_INSTAGRAM_HANDLE: "lovely.naru.sensei"
+    
+    - name: Cache build output
+      uses: actions/cache@v3
+      with:
+        path: .next
+        key: ${{ runner.os }}-nextjs-${{ github.sha }}
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20'
+    
+    - name: Restore cached build
+      uses: actions/cache@v3
+      with:
+        path: .next
+        key: ${{ runner.os }}-nextjs-${{ github.sha }}
+    
+    - name: Deploy to Vercel
+      uses: amondnet/vercel-action@v20
+      with:
+        vercel-token: ${{ secrets.VERCEL_TOKEN }}
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+        vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+        working-directory: ./
+        vercel-args: '--prod'

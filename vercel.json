@@ -1,0 +1,65 @@
+# Vercelデプロイ設定ファイル
+
+{
+  "version": 2,
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
+  "installCommand": "npm install",
+  "framework": "nextjs",
+  "outputDirectory": ".next",
+  "github": {
+    "silent": true,
+    "autoAlias": true
+  },
+  "env": {
+    "NEXT_PUBLIC_SITE_URL": "https://narusensei.com",
+    "NEXT_PUBLIC_SITE_NAME": "ナル先生の公式サイト",
+    "NEXT_PUBLIC_SITE_DESCRIPTION": "如月成美（ナル先生）の公式ウェブサイト - 数学の魅力をお届けします",
+    "NEXT_PUBLIC_TWITTER_HANDLE": "@naru_sensei",
+    "NEXT_PUBLIC_INSTAGRAM_HANDLE": "lovely.naru.sensei"
+  },
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        }
+      ]
+    },
+    {
+      "source": "/fonts/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/images/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/instagram",
+      "destination": "https://www.instagram.com/lovely.naru.sensei/",
+      "permanent": false
+    }
+  ]
+}
